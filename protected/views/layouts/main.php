@@ -29,11 +29,19 @@
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
+				array('label'=>'Home', 'url'=>array('/site/index'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Country', 'url'=>array('/country/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Position', 'url'=>array('/position/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Priority', 'url'=>array('/priority/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Status', 'url'=>array('/status/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Type', 'url'=>array('/type/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Source', 'url'=>array('/source/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Client', 'url'=>array('/client/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'Token', 'url'=>array('/token/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'API Access', 'url'=>array('/access/admin'), 'visible'=>Yii::app()->user->isAdmin()),
+				array('label'=>'API Auth', 'url'=>array('/groupauth/admin'), 'visible'=>Yii::app()->user->isAdmin()),
 				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
+				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>Yii::app()->user->isAdmin())
 			),
 		)); ?>
 	</div><!-- mainmenu -->

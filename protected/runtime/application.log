@@ -1,0 +1,297 @@
+2016/10/22 16:14:15 [error] [exception.CHttpException.404] CHttpException: Unable to resolve the request "gii". in /var/www/html/api-scrum/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#3 {main}
+REQUEST_URI=/index.php?r=gii
+---
+2016/10/22 16:17:40 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in /var/www/html/api-scrum/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/html/api-scrum/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/html/api-scrum/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/html/api-scrum/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/html/api-scrum/framework/gii/generators/model/ModelCode.php(60): CModule->__get('db')
+#5 /var/www/html/api-scrum/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/html/api-scrum/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/html/api-scrum/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/html/api-scrum/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#14 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=gii/model/index
+HTTP_REFERER=http://api.myscrum/index.php?r=gii/default/index
+---
+2016/10/22 23:35:50 [error] [exception.CDbException] CDbException: CDbConnection failed to open the DB connection: could not find driver in /var/www/html/api-scrum/framework/db/CDbConnection.php:399
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/CDbConnection.php(347): CDbConnection->open()
+#1 /var/www/html/api-scrum/framework/db/CDbConnection.php(325): CDbConnection->setActive(true)
+#2 /var/www/html/api-scrum/framework/base/CModule.php(394): CDbConnection->init()
+#3 /var/www/html/api-scrum/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /var/www/html/api-scrum/framework/gii/generators/model/ModelCode.php(60): CModule->__get('db')
+#5 /var/www/html/api-scrum/framework/web/CFormModel.php(39): ModelCode->init()
+#6 /var/www/html/api-scrum/framework/gii/CCodeGenerator.php(153): CFormModel->__construct()
+#7 /var/www/html/api-scrum/framework/gii/CCodeGenerator.php(63): CCodeGenerator->prepare()
+#8 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): CCodeGenerator->actionIndex()
+#9 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /var/www/html/api-scrum/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('gii/model/index')
+#14 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#15 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/index.php?r=gii/model/index
+HTTP_REFERER=http://api.myscrum/index.php?r=gii/default/index
+---
+2016/10/23 13:59:55 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'admin' in 'where clause'. The SQL statement executed was: SELECT * FROM `user` `t` WHERE LOWER(user_username)=admin and user_status_id = 1 LIMIT 1.
+in /var/www/html/api-scrum/protected/components/UserIdentity.php (15)
+in /var/www/html/api-scrum/protected/models/LoginForm.php (52)
+in /var/www/html/api-scrum/protected/controllers/SiteController.php (94)
+2016/10/23 13:59:55 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'admin' in 'where clause'. The SQL statement executed was: SELECT * FROM `user` `t` WHERE LOWER(user_username)=admin and user_status_id = 1 LIMIT 1 in /var/www/html/api-scrum/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryRow()
+#2 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(1461): CActiveRecord->query(Object(CDbCriteria))
+#3 /var/www/html/api-scrum/protected/components/UserIdentity.php(15): CActiveRecord->find('LOWER(user_user...')
+#4 /var/www/html/api-scrum/protected/models/LoginForm.php(52): UserIdentity->authenticate()
+#5 /var/www/html/api-scrum/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#6 /var/www/html/api-scrum/framework/validators/CValidator.php(201): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#7 /var/www/html/api-scrum/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), Array)
+#8 /var/www/html/api-scrum/protected/controllers/SiteController.php(94): CModel->validate()
+#9 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#10 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /var/www/html/api-scrum/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('login')
+#14 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('site/login')
+#15 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#16 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=site/login
+HTTP_REFERER=http://myscrum/index.php?r=site/login
+---
+2016/10/23 14:13:48 [error] [exception.CException] CException: Property "User.level" is not defined. in /var/www/html/api-scrum/framework/base/CComponent.php:130
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(145): CComponent->__get('level')
+#1 /var/www/html/api-scrum/protected/components/EWebUser.php(9): CActiveRecord->__get('level')
+#2 /var/www/html/api-scrum/framework/base/CComponent.php(612) : eval()'d code(1): EWebUser->isAdmin()
+#3 /var/www/html/api-scrum/framework/base/CComponent.php(612): eval()
+#4 /var/www/html/api-scrum/framework/web/auth/CAccessControlFilter.php(392): CComponent->evaluateExpression('Yii::app()->use...', Array)
+#5 /var/www/html/api-scrum/framework/web/auth/CAccessControlFilter.php(288): CAccessRule->isExpressionMatched(Object(EWebUser))
+#6 /var/www/html/api-scrum/framework/web/auth/CAccessControlFilter.php(138): CAccessRule->isUserAllowed(Object(EWebUser), Object(CountryController), Object(CInlineAction), '127.0.0.1', 'GET')
+#7 /var/www/html/api-scrum/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#8 /var/www/html/api-scrum/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /var/www/html/api-scrum/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /var/www/html/api-scrum/framework/web/CController.php(291): CFilterChain->run()
+#12 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('admin')
+#14 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('country/admin')
+#15 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#16 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#17 {main}
+REQUEST_URI=/index.php?r=country/admin
+---
+2016/10/23 15:42:04 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "view". in /var/www/html/api-scrum/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('position/view')
+#3 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=position/view&id=1
+HTTP_REFERER=http://myscrum/index.php?r=position/create
+---
+2016/10/24 20:44:11 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "getUser". in /var/www/html/api-scrum/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CController.php(270): CController->missingAction('getUser')
+#1 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('getUser')
+#2 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('api/getUser')
+#3 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=api/getUser
+---
+2016/10/24 22:30:10 [error] [php] include(User.php): failed to open stream: No such file or directory (/var/www/html/api-scrum/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/api-scrum/protected/controllers/ApiController.php(18): spl_autoload_call()
+#1 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): ApiController->actionUser()
+#2 /var/www/html/api-scrum/protected/extensions/bogo-yii-json-service/components/CBJsonController.php(272): CBJsonInlineAction->runWithParams()
+#3 /var/www/html/api-scrum/framework/web/CController.php(286): ApiController->runAction()
+#4 /var/www/html/api-scrum/framework/web/CController.php(265): ApiController->runActionWithFilters()
+#5 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): ApiController->run()
+#6 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/api-scrum/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=api/user
+in /var/www/html/api-scrum/protected/controllers/ApiController.php (18)
+in /var/www/html/api-scrum/protected/extensions/bogo-yii-json-service/components/CBJsonController.php (272)
+in /var/www/html/api-scrum/index.php (12)
+2016/10/24 22:31:58 [error] [php] include(User.php): failed to open stream: No such file or directory (/var/www/html/api-scrum/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/api-scrum/protected/controllers/ApiController.php(18): spl_autoload_call()
+#1 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): ApiController->actionUser()
+#2 /var/www/html/api-scrum/protected/extensions/bogo-yii-json-service/components/CBJsonController.php(272): CBJsonInlineAction->runWithParams()
+#3 /var/www/html/api-scrum/framework/web/CController.php(286): ApiController->runAction()
+#4 /var/www/html/api-scrum/framework/web/CController.php(265): ApiController->runActionWithFilters()
+#5 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): ApiController->run()
+#6 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#8 /var/www/html/api-scrum/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=api/user
+in /var/www/html/api-scrum/protected/controllers/ApiController.php (18)
+in /var/www/html/api-scrum/protected/extensions/bogo-yii-json-service/components/CBJsonController.php (272)
+in /var/www/html/api-scrum/index.php (12)
+2016/10/30 05:48:18 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'active' in 'where clause'. The SQL statement executed was: SELECT * FROM `client` `t` WHERE active = 1.
+in /var/www/html/api-scrum/protected/views/token/_form.php (38)
+in /var/www/html/api-scrum/protected/views/token/create.php (17)
+in /var/www/html/api-scrum/protected/controllers/TokenController.php (70)
+2016/10/30 05:48:18 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'active' in 'where clause'. The SQL statement executed was: SELECT * FROM `client` `t` WHERE active = 1 in /var/www/html/api-scrum/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(1356): CDbCommand->queryAll()
+#2 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(1475): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /var/www/html/api-scrum/protected/views/token/_form.php(38): CActiveRecord->findAll('active = 1')
+#4 /var/www/html/api-scrum/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#5 /var/www/html/api-scrum/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#6 /var/www/html/api-scrum/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#7 /var/www/html/api-scrum/protected/views/token/create.php(17): CController->renderPartial('_form', Array)
+#8 /var/www/html/api-scrum/framework/web/CBaseController.php(126): require('/var/www/html/a...')
+#9 /var/www/html/api-scrum/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/a...', Array, true)
+#10 /var/www/html/api-scrum/framework/web/CController.php(869): CBaseController->renderFile('/var/www/html/a...', Array, true)
+#11 /var/www/html/api-scrum/framework/web/CController.php(782): CController->renderPartial('create', Array, true)
+#12 /var/www/html/api-scrum/protected/controllers/TokenController.php(70): CController->render('create', Array)
+#13 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): TokenController->actionCreate()
+#14 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/api-scrum/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/api-scrum/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#18 /var/www/html/api-scrum/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#19 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#20 /var/www/html/api-scrum/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#22 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('create')
+#23 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('token/create')
+#24 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#26 {main}
+REQUEST_URI=/index.php?r=token/create
+HTTP_REFERER=http://myscrum/index.php?r=token/admin
+---
+2016/10/30 06:38:37 [error] [exception.ParseError] ParseError: syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/api-scrum/protected/controllers/TokenController.php:66
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CWebApplication.php(276): CWebApplication->createController('create/')
+#1 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('token/create')
+#2 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#4 {main}
+REQUEST_URI=/index.php?r=token/create
+HTTP_REFERER=http://myscrum/index.php?r=token/admin
+---
+2016/10/30 06:38:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/api-scrum/protected/controllers/TokenController.php:66
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CWebApplication.php(276): CWebApplication->createController('create/')
+#1 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('token/create')
+#2 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#4 {main}
+REQUEST_URI=/index.php?r=token/create
+HTTP_REFERER=http://myscrum/index.php?r=token/admin
+---
+2016/10/30 06:38:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ';', expecting ',' or ')' in /var/www/html/api-scrum/protected/controllers/TokenController.php:66
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CWebApplication.php(276): CWebApplication->createController('create/')
+#1 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('token/create')
+#2 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#3 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#4 {main}
+REQUEST_URI=/index.php?r=token/create
+HTTP_REFERER=http://myscrum/index.php?r=token/admin
+---
+2016/10/30 06:39:16 [error] [php] Undefined variable: clients (/var/www/html/api-scrum/protected/views/token/_form.php:26)
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CController.php(869): TokenController->renderFile()
+#1 /var/www/html/api-scrum/protected/views/token/create.php(17): TokenController->renderPartial()
+#2 /var/www/html/api-scrum/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/api-scrum/framework/web/CBaseController.php(95): TokenController->renderInternal()
+#4 /var/www/html/api-scrum/framework/web/CController.php(869): TokenController->renderFile()
+#5 /var/www/html/api-scrum/framework/web/CController.php(782): TokenController->renderPartial()
+#6 /var/www/html/api-scrum/protected/controllers/TokenController.php(75): TokenController->render()
+#7 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): TokenController->actionCreate()
+#8 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams()
+#9 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(133): TokenController->runAction()
+#10 /var/www/html/api-scrum/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#11 /var/www/html/api-scrum/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#12 /var/www/html/api-scrum/framework/web/filters/CInlineFilter.php(58): TokenController->filterAccessControl()
+#13 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#14 /var/www/html/api-scrum/framework/web/CController.php(291): CFilterChain->run()
+#15 /var/www/html/api-scrum/framework/web/CController.php(265): TokenController->runActionWithFilters()
+#16 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): TokenController->run()
+#17 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#18 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#19 /var/www/html/api-scrum/index.php(12): CWebApplication->run()
+REQUEST_URI=/index.php?r=token/create
+in /var/www/html/api-scrum/protected/views/token/_form.php (26)
+in /var/www/html/api-scrum/protected/views/token/create.php (17)
+in /var/www/html/api-scrum/protected/controllers/TokenController.php (75)
+2016/10/30 06:46:55 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "view". in /var/www/html/api-scrum/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/api-scrum/framework/web/CController.php(270): CController->missingAction('view')
+#1 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('source/view')
+#3 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/index.php?r=source/view&id=1
+HTTP_REFERER=http://myscrum/index.php?r=source/create
+---
+2016/10/30 06:47:54 [error] [exception.CException] CException: Property "Token.user_id" is not defined. in /var/www/html/api-scrum/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(161): CComponent->__set('user_id', '6972ecff-98ed-1...')
+#1 /var/www/html/api-scrum/protected/controllers/TokenController.php(69): CActiveRecord->__set('user_id', '6972ecff-98ed-1...')
+#2 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): TokenController->actionCreate()
+#3 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/api-scrum/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/html/api-scrum/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/html/api-scrum/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/api-scrum/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('create')
+#12 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('token/create')
+#13 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=token/create
+HTTP_REFERER=http://myscrum/index.php?r=token/create
+---
+2016/10/30 06:48:20 [error] [exception.CException] CException: Property "Token.token_user_id" is not defined. in /var/www/html/api-scrum/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/api-scrum/framework/db/ar/CActiveRecord.php(161): CComponent->__set('token_user_id', '6972ecff-98ed-1...')
+#1 /var/www/html/api-scrum/protected/controllers/TokenController.php(69): CActiveRecord->__set('token_user_id', '6972ecff-98ed-1...')
+#2 /var/www/html/api-scrum/framework/web/actions/CInlineAction.php(49): TokenController->actionCreate()
+#3 /var/www/html/api-scrum/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 /var/www/html/api-scrum/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /var/www/html/api-scrum/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 /var/www/html/api-scrum/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 /var/www/html/api-scrum/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 /var/www/html/api-scrum/framework/web/CController.php(291): CFilterChain->run()
+#10 /var/www/html/api-scrum/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 /var/www/html/api-scrum/framework/web/CWebApplication.php(282): CController->run('create')
+#12 /var/www/html/api-scrum/framework/web/CWebApplication.php(141): CWebApplication->runController('token/create')
+#13 /var/www/html/api-scrum/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#14 /var/www/html/api-scrum/index.php(12): CApplication->run()
+#15 {main}
+REQUEST_URI=/index.php?r=token/create
+HTTP_REFERER=http://myscrum/index.php?r=token/create
+---

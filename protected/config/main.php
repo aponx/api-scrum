@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'My Web Application',
+	'name'=>'My Scrum',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -16,39 +16,45 @@ return array(
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
+		'ext.bogo-yii-json-service.components.*',
+		'ext.generate.*',
 	),
 
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-		/*
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'Enter Your Password Here',
+			'password'=>'amanda',
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
-		*/
 	),
 
 	// application components
 	'components'=>array(
 
 		'user'=>array(
+			'class'=>'application.components.EWebUser',
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 		),
 
+		'request'=>array(
+            'class'=>'CBHttpRequest',
+        ),
+
 		// uncomment the following to enable URLs in path-format
-		/*
-		'urlManager'=>array(
-			'urlFormat'=>'path',
-			'rules'=>array(
-				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
-				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
-				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-			),
-		),
-		*/
+		
+		// 'urlManager'=>array(
+		// 	'urlFormat'=>'path',
+		// 	'rules'=>array(
+		// 		'<controller:\w+>/<id:\d+>'=>'<controller>/view',
+		// 		'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
+		// 		'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
+		// 	),
+		// ),
+		
 
 		// database settings are configured in database.php
 		'db'=>require(dirname(__FILE__).'/database.php'),
